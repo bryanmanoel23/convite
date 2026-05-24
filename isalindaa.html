@@ -33,10 +33,10 @@ body::before{
 
 .caixa{
     position:relative;
-    z-index:1;
+    z-index:2;
 
-    background:rgba(255,255,255,0.12);
-    backdrop-filter: blur(12px);
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
 
     padding:70px 50px;
     border-radius:35px;
@@ -45,8 +45,9 @@ body::before{
     width:90%;
     max-width:500px;
 
-    overflow:hidden;
+    overflow:visible;
 }
+
 .caixa::before{
     content:"";
     position:absolute;
@@ -66,7 +67,7 @@ body::before{
 
     animation:girar 6s linear infinite;
 
-    z-index:-2;
+    z-index:0;
 }
 
 .caixa::after{
@@ -74,12 +75,17 @@ body::before{
     position:absolute;
     inset:4px;
 
-    background:rgba(255,255,255,0.10);
-    backdrop-filter: blur(10px);
+    background:rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
 
     border-radius:32px;
 
-    z-index:-1;
+    z-index:1;
+}
+
+.caixa > *{
+    position:relative;
+    z-index:2;
 }
 
 @keyframes girar{
