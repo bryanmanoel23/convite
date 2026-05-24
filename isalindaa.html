@@ -5,38 +5,22 @@
 <title>Convite</title>
 <style>
 body{
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
-
-    position:relative;
+    margin:0;
     overflow:hidden;
 
-    background-image: url('Isal.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-body::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.20);
-    z-index:0;
+    background-image:url('Isal.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .caixa{
     position:relative;
-    z-index:2;
-
-    background:rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
 
     padding:70px 50px;
     border-radius:35px;
@@ -45,16 +29,21 @@ body::before{
     width:90%;
     max-width:500px;
 
-    overflow:visible;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(10px);
+
+    overflow:hidden;
 }
 
 .caixa::before{
     content:"";
     position:absolute;
-    inset:-4px;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
 
-    background:linear-gradient(
-        90deg,
+    background:conic-gradient(
         #ff0080,
         #7928ca,
         #00d4ff,
@@ -62,10 +51,7 @@ body::before{
         #ff0080
     );
 
-    background-size:300%;
-    border-radius:40px;
-
-    animation:girar 6s linear infinite;
+    animation:girar 4s linear infinite;
 
     z-index:0;
 }
@@ -75,9 +61,7 @@ body::before{
     position:absolute;
     inset:4px;
 
-    background:rgba(0,0,0,0.35);
-    backdrop-filter: blur(12px);
-
+    background:rgba(15,15,15,0.75);
     border-radius:32px;
 
     z-index:1;
@@ -89,15 +73,11 @@ body::before{
 }
 
 @keyframes girar{
-    0%{
-        background-position:0% 50%;
-    }
-
     100%{
-        background-position:300% 50%;
+        transform:rotate(360deg);
     }
 }
-    
+
 h2{
     font-size:42px;
     line-height:1.2;
