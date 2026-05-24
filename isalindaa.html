@@ -32,22 +32,68 @@ body::before{
     position:relative;
     z-index:1;
 
-    background:rgba(255,255,255,0.92);
-    backdrop-filter: blur(8px);
+    background:rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
 
     padding:70px 50px;
     border-radius:35px;
     text-align:center;
-    box-shadow:0 10px 35px rgba(0,0,0,0.25);
+
     width:90%;
     max-width:500px;
+
+    overflow:hidden;
+}
+.caixa::before{
+    content:"";
+    position:absolute;
+    inset:-4px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0080,
+        #7928ca,
+        #00d4ff,
+        #39ff14,
+        #ff0080
+    );
+
+    background-size:300%;
+    border-radius:40px;
+
+    animation:girar 6s linear infinite;
+
+    z-index:-2;
 }
 
+.caixa::after{
+    content:"";
+    position:absolute;
+    inset:4px;
+
+    background:rgba(20,20,20,0.75);
+    backdrop-filter: blur(15px);
+
+    border-radius:32px;
+
+    z-index:-1;
+}
+
+@keyframes girar{
+    0%{
+        background-position:0% 50%;
+    }
+
+    100%{
+        background-position:300% 50%;
+    }
+}
+    
 h2{
     font-size:42px;
     line-height:1.2;
     margin-bottom:40px;
-    color:#111;
+    color:white;
 }
 
 button{
