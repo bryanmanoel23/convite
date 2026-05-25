@@ -45,8 +45,7 @@ body{
     border-radius:35px;
     padding:3px;
 
-    background:linear-gradient(
-        45deg,
+    background:conic-gradient(
         #ff0080,
         #7928ca,
         #00d4ff,
@@ -54,9 +53,14 @@ body{
         #ff0080
     );
 
-    background-size:300% 300%;
+    animation:girar 4s linear infinite;
 
-    animation:borda 5s linear infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
 
     z-index:0;
 }
