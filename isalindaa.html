@@ -32,7 +32,7 @@ body{
     background:rgba(0,0,0,0.35);
     backdrop-filter:blur(10px);
 
-    overflow:hidden;
+    overflow:visible;
 }
 
 .caixa::before{
@@ -100,10 +100,11 @@ button{
 }
 
 .nao{
-    position:absolute;
+    position:fixed;
+    z-index:9999;
+
     background:#ff3b30;
     color:white;
-    position:absolute;
 }
 </style>
 </head>
@@ -122,11 +123,16 @@ btn.addEventListener("touchstart", fugir);
 btn.addEventListener("mouseover", fugir);
 
 function fugir(){
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
+    const btn = document.getElementById("nao");
 
-    btn.style.left = `${x}px`;
-    btn.style.top = `${y}px`;
+    const maxX = window.innerWidth - btn.offsetWidth;
+    const maxY = window.innerHeight - btn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
 }
 </script>
 
