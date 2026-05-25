@@ -103,9 +103,13 @@ button{
     position:fixed;
     z-index:9999;
 
+    top:60%;
+    left:60%;
+
     background:#ff3b30;
     color:white;
 }
+    
 </style>
 </head>
 <body>
@@ -121,12 +125,12 @@ const btn = document.getElementById("nao");
 
 btn.addEventListener("touchstart", fugir);
 btn.addEventListener("mouseover", fugir);
+btn.addEventListener("click", fugir);
 
 function fugir(){
-    const btn = document.getElementById("nao");
 
-    const maxX = window.innerWidth - btn.offsetWidth;
-    const maxY = window.innerHeight - btn.offsetHeight;
+    const maxX = window.innerWidth - btn.offsetWidth - 20;
+    const maxY = window.innerHeight - btn.offsetHeight - 20;
 
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
