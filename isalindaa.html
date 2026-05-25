@@ -109,12 +109,6 @@ button{
 }
 
 .nao{
-    position:fixed;
-    z-index:9999;
-
-    top:70%;
-    left:50%;
-
     background:#ff3b30;
     color:white;
 }
@@ -136,13 +130,21 @@ btn.addEventListener("touchstart", fugir);
 btn.addEventListener("mouseover", fugir);
 btn.addEventListener("click", fugir);
 
+let ativado = false;
+
 function fugir(){
+
+    if(!ativado){
+        btn.style.position = "fixed";
+        btn.style.zIndex = "9999";
+        ativado = true;
+    }
 
     const largura = window.innerWidth - btn.offsetWidth - 10;
     const altura = window.innerHeight - btn.offsetHeight - 10;
 
-    const x = Math.max(0, Math.random() * largura);
-    const y = Math.max(0, Math.random() * altura);
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
 
     btn.style.left = `${x}px`;
     btn.style.top = `${y}px`;
