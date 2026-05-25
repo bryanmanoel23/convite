@@ -112,8 +112,8 @@ button{
     position:fixed;
     z-index:9999;
 
-    top:60%;
-    left:60%;
+    top:70%;
+    left:50%;
 
     background:#ff3b30;
     color:white;
@@ -138,15 +138,16 @@ btn.addEventListener("click", fugir);
 
 function fugir(){
 
-    const maxX = window.innerWidth - btn.offsetWidth - 20;
-    const maxY = window.innerHeight - btn.offsetHeight - 20;
+    const largura = window.innerWidth - btn.offsetWidth - 10;
+    const altura = window.innerHeight - btn.offsetHeight - 10;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const x = Math.max(0, Math.random() * largura);
+    const y = Math.max(0, Math.random() * altura);
 
-    btn.style.left = x + "px";
-    btn.style.top = y + "px";
+    btn.style.left = `${x}px`;
+    btn.style.top = `${y}px`;
 }
+    
 </script>
 
 </body>
